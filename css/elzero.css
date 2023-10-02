@@ -7,6 +7,8 @@
 
 :root {
     --main-color: #2196f3;
+    --main-padding: 100px;
+    --text-color: #666666;
 }
 
 ul {
@@ -25,6 +27,7 @@ html {
 }
 
 body {
+  /* overflow-x: hidden; */
   font-family: "Cairo", sans-serif;
 }
 
@@ -142,6 +145,7 @@ header .container > ul > li:hover + div , .sections:hover {
   border-bottom: 3px solid var(--main-color);
   visibility: hidden;
   transition:top 0.5s;
+  z-index: 2;
 }
 
 .sections img {
@@ -204,6 +208,119 @@ header .container > ul > li:hover + div , .sections:hover {
 /* end of header  */
 /* start of landing  */
 .landing {
+  position: relative;
   background-color: #ececec;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.landing::before {
+  content: "";
+  position: absolute;
+  background-color: white;
+  width: 150%;
+  height: 35%;
+  bottom: -15%;
+  transform: rotate(-5deg);
+}
+
+.landing > .container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+}
+
+.landing > .container .image{
+  flex-basis: 50%;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: up-down 4s linear infinite;
+}
+
+@media (max-width: 992px) {
+  .landing > .container .image {
+    display: none;
+  }
+  .landing > .container {
+    height: 70%;
+    justify-content: center;
+  }
+}
+
+.landing > .container img {
+  max-width: 100%;
+}
+
+.landing > .container .text{
+  flex-basis: 40%;
+}
+
+@media (max-width: 992px) {
+  .landing>.container .text {
+    flex-basis: 80%;
+    text-align: center;
+  }
+}
+
+.landing > .container .text h1{
+  font-size: 40px;
+  letter-spacing: -2px;
+  margin: 0;
+}
+
+.landing > .container .text p{
+  font-size: 25px;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .landing>.container .text h1 {
+    font-size: 30px;
+  }
+
+  .landing>.container .text p {
+    font-size: 20px;
+  }
+}
+
+.landing > a{
+  display: block;
+  width: fit-content;
+  margin: auto;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 25px;
+  color: var(--main-color);
+  z-index: 2;
+  animation: jump 1s ease-in infinite;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes jump {
+  0% , 40% , 80% , 100% {
+    transform: translate(-50% , 0px);
+  }
+  20% , 60% {
+    transform: translate(-50% , -10px);
+  }
 }
 /* end of landing  */
