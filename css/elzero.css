@@ -382,7 +382,7 @@ header .container > ul > li:hover + div , .sections:hover {
   font-size: 25px;
   color: var(--main-color);
   z-index: 2;
-  animation: jump 1s ease-in infinite;
+  animation: jump 1.5s ease-in infinite;
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
 
@@ -558,9 +558,151 @@ header .container > ul > li:hover + div , .sections:hover {
     flex-basis: 100%;
   }
 }
-
-
-/* @media (min-width: 1200px) {
-
-} */
 /* end of gallery */
+/* start of features */
+.features {
+  position: relative;
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  z-index: 0;
+}
+
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill , minmax(280px , 1fr));
+  gap: 40px;
+}
+
+.features .container .feature {
+  border: 1px solid #c9c9c9;
+}
+
+.features .container .image {
+  position: relative;
+  overflow: hidden;
+}
+
+.features .container .feature:hover .image::after {
+  transform: skewY(16deg) scaleY(3);
+  transition-duration: 0.3s;
+}
+
+.features .container .image::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 15%;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  transform-origin: center;
+  transform: skewY(-16deg) scaleY(3);
+  /* z-index: 1; */
+}
+
+.features .container .image::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+}
+
+.feature:nth-child(2) .image::before {
+  background-color: #009688;
+}
+.feature:first-child .image::before {
+  background-color: #f44036;
+}
+.feature:last-child .image::before {
+  background-color: #03a9f4;
+}
+
+.features .container .image img {
+  max-width: 100%;
+}
+
+.features .container .text h2 {
+  position: relative;
+  font-size: 40px;
+  margin: 0;
+  padding: 20px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.features .container .text h2::before {
+  content: "";
+  position: absolute;
+  width: 55%;
+  height: 5px;
+  bottom: 0;
+}
+
+.feature:nth-child(2) .text h2::before , .feature:nth-child(2) a::before {
+  background-color: #009688;
+}
+
+.feature:first-child .text h2::before , .feature:first-child a::before {
+  background-color: #f44036;
+}
+
+.feature:last-child .text h2::before  , .feature:last-child a::before{
+  background-color: #03a9f4;
+}
+
+.features .container .text p {
+  font-size: 20px;
+  text-align: center;
+  line-height: 2;
+  color: var(--text-color);
+  margin: 30px;
+}
+
+.features .container a {
+  display: block;
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  width: fit-content;
+  padding: 10px 25px;
+  margin: 0 auto 20px;
+  border: 3px solid;
+  border-radius: 5px;
+}
+
+.features .container a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  transition-duration: 0.3s;
+  z-index: -1;
+}
+
+.features .container a:hover {
+  color: white;
+  /* transition-delay: 0.2s; */
+}
+
+.features .container a:hover::before {
+  width: 100%;
+}
+
+.feature:nth-child(2) a {
+  color: #009688;
+  border-color: #009688;
+}
+
+.feature:first-child a {
+  color: #f44036;
+  border-color: #f44036;
+}
+
+.feature:last-child a {
+  color: #03a9f4;
+  border-color: #03a9f4;
+}
+/* end of features */
