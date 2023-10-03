@@ -62,6 +62,24 @@ body {
   }
 }
 
+.features 
+, .articles 
+, .gallery
+, .testi 
+, .services 
+, .team {
+  position: relative;
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  z-index: 0;
+}
+
+.gallery 
+, .testi 
+, .team {
+  background-color: var(--section-background);
+}
+
 .cap-text {
   text-transform: capitalize;
 }
@@ -412,13 +430,6 @@ header .container > ul > li:hover + div , .sections:hover {
 }
 /* end of landing  */
 /* start of article */
-.articles {
-  position: relative;
-  padding-top: var(--main-padding);
-  padding-bottom: var(--main-padding);
-  z-index: 0;
-}
-
 .articles-cont {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -560,13 +571,6 @@ header .container > ul > li:hover + div , .sections:hover {
 }
 /* end of gallery */
 /* start of features */
-.features {
-  position: relative;
-  padding-top: var(--main-padding);
-  padding-bottom: var(--main-padding);
-  z-index: 0;
-}
-
 .features .container {
   display: grid;
   grid-template-columns: repeat(auto-fill , minmax(280px , 1fr));
@@ -706,3 +710,63 @@ header .container > ul > li:hover + div , .sections:hover {
   border-color: #03a9f4;
 }
 /* end of features */
+/* start of testimonials */
+
+.testi .special-head {
+  margin-bottom: 110px;
+}
+.testi .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.testi .container .test {
+  position: relative;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+  padding: 20px;
+}
+
+.testi .container .test h2 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.testi .container .test p {
+  margin: 0;
+  color: var(--text-color);
+}
+
+.testi .container .test .image {
+  width: 90px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  right: -11px;
+  background-color: var(--section-background);
+}
+
+.testi .container .test img {
+  max-width: 100%;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.testi .container .test .stars {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.testi .container .test .stars + p {
+  line-height: 1.5;
+}
+/* end of testimonials */
+/* start of team */
+/* end of team */
+/* start of services */
+/* end of services */
+
