@@ -1207,6 +1207,113 @@ header .container > ul > li:hover + div , .sections:hover {
 }
 /* end of events  */
 /* start of pricing  */
+.pricing .container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+  z-index: 1;
+}
+.pricing .container .box {
+  position: relative;
+  background-color: white;
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+  padding-top: 20px;
+  padding-bottom: 10px;
+  z-index: 2;
+}
+@media (min-width: 1200px) {
+  .pricing .container .box:nth-child(2){
+    top: -20px;
+  }
+}
+.pricing .container .box::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 50%;
+  background-color: var(--section-background);
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  transition: 0.3s;
+  z-index: -1;
+}
+.pricing .container .box::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 50%;
+  background-color: var(--section-background);
+  top: 50%;
+  right: 0;
+  opacity: 0.5;
+  transition: 0.3s;
+  z-index: -1;
+}
+.pricing .container .box:hover:before , .pricing .container .box:hover::after{
+  width: 100%;
+}
+.pricing .container .box .price {
+  text-align: center;
+}
+.pricing .container .box:nth-child(2) .price::before {
+  content: "Most Popular";
+  position: absolute;
+  background-color: var(--main-color);
+  color: white;
+  padding: 10px;
+  padding-right: 30px;
+  transform: rotate(90deg);
+  top: 47px;
+  right: -13px;
+  font-weight: bold;
+}
+.pricing .container .box:nth-child(2) .price::after {
+  content: "";
+  position: absolute;
+  border: 19px solid;
+  border-color: transparent;
+  border-bottom-color: white;
+  top: 97px;
+  right: 35px;
+}
+.pricing .container .box .price img {
+  width: 80px;
+}
+.pricing .container .box .price h2:nth-of-type(2) {
+  font-size: 55px;
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: var(--main-color);
+}
+.pricing .container .box .price p {
+  margin-top: 5px;
+  color: var(--text-color);
+}
+.pricing .container .box ul li {
+  padding: 20px;
+  border-top: 1px solid var(--section-background);
+  font-weight: 500;
+}
+.pricing .container .box ul li i {
+  color: var(--main-color);
+  margin-right: 10px;
+}
+.pricing .container .box a {
+  display: block;
+  font-weight: 600;
+  width: fit-content;
+  padding: 15px;
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  margin: 30px auto
+}
+.pricing .container .box a:hover {
+  color: white;
+  background-color: var(--main-color-alt);
+}
 /* end of pricing  */
 /* queries */
 @media (min-width: 768px) {
@@ -1215,3 +1322,4 @@ header .container > ul > li:hover + div , .sections:hover {
 }
 @media (min-width: 1200px) {
 }
+/* box-shadow: 0 0 10px rgb(0 0 0 / 20%); */
