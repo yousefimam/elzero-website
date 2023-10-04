@@ -1315,6 +1315,68 @@ header .container > ul > li:hover + div , .sections:hover {
   background-color: var(--main-color-alt);
 }
 /* end of pricing  */
+/* start of top  */
+.top .container {
+  display: flex;
+}
+@media (max-width: 992px) {
+  .top .container {
+    flex-direction: column;
+  }
+}
+.top .time-stamps {
+  min-width: 300px;
+  border: 1px solid var(--section-background);
+}
+.top .time-stamps div {
+  padding: 15px;
+}
+.top .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+.top .head h2 {
+  margin: 0;
+  font-size: 16px;
+}
+.top .stamp {
+  border: 1px solid var(--section-background);
+}
+.top .stamp:hover p:first-child {
+  color: var(--main-color);
+}
+.top .stamp p:first-child {
+  margin-top: 0;
+}
+.top .stamp p:last-child {
+  color: var(--text-color);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.top .poster {
+  flex: 1;
+  padding: 10px;
+  background-color: var(--section-background);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.top .poster p {
+  background-color: white;
+  padding: 20px;
+  margin: 0;
+  margin-top: 10px;
+}
+.top .poster .image {
+  
+}
+.top .poster .image img {
+  max-width: 100%;
+}
+/* end of top  */
+
 /* queries */
 @media (min-width: 768px) {
 }
