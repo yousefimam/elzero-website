@@ -76,7 +76,7 @@ body {
 
 .gallery 
 , .testi 
-, .team {
+, .services {
   background-color: var(--section-background);
 }
 
@@ -766,7 +766,164 @@ header .container > ul > li:hover + div , .sections:hover {
 }
 /* end of testimonials */
 /* start of team */
+.team .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.team .container .member {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 5px;
+}
+.team .container .member:hover img {
+  filter: grayscale();
+}
+.team .container i:hover {
+  color: var(--main-color);
+}
+.team .container .member:hover::after {
+  width: 80%;
+}
+.team .container .member::before {
+  content: "";
+  position: absolute;
+  background-color: #f0f0f0;
+  width: 80%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  border-radius: 10px;
+  z-index: -1;
+}
+.team .container .member::after {
+  content: "";
+  position: absolute;
+  background-color: #d7d7d7;
+  opacity: 0.4;
+  width: 0;
+  height: 100%;
+  right: 0;
+  top: 0;
+  border-radius: 10px;
+  z-index: 1;
+  transition-duration: 0.3s;
+}
+.team .container .member .content {
+  position: relative;
+  justify-content: space-between;
+  z-index: 2;
+}
+.team .container .member .image {
+  flex-basis: 80%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.team .container .member img {
+  max-width: 100%;
+}
+.team .container .member .socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 20%;
+  color: var(--text-color);
+}
+.team .container .member .socials i {
+  padding: 15px;
+}
+.team .container .member .text {
+  position: relative;
+  padding-left: 25%;
+}
+.team .container .member .text h2 {
+  margin-bottom: 0;
+  color: var(--main-color);
+}
+.team .container .member:hover h2 {
+  color: var(--text-color);
+}
 /* end of team */
 /* start of services */
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.services .serv {
+  position: relative;
+  background-color: white;
+  padding-top: 35px;
+  counter-increment: serv-count;
+  box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+  transition: 0.3s;
+}
+.services .serv::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  background-color: var(--main-color);
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+.services .serv:hover::before {
+  width: 100%;
+}
+.services .serv:hover {
+  transform: translateY(-10px);
+}
+.services .serv i {
+  display: block;
+  color: #d9d9d9;
+  font-size: 55px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.services .serv h2 {
+  color: var(--main-color);
+  text-align: center;
+  margin-bottom: 35px;
+}
+.services .serv div {
+  position: relative;
+  padding: 15px;
+  text-align: right;
+  background-color: #f9f9f9;
+}
+.services .serv div::before {
+  content: "0" counter(serv-count);
+  position: absolute;
+  width: 70px;
+  height: 100%;
+  background-color: var(--main-color);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  padding-right: 30px;
+}
+.services .serv div::after{
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 100%;
+  background-color: #d9d9d9;
+  top: 0;
+  left: 77px;
+  transform: skewX(-40deg);
+}
+.services .serv div a {
+  color: var(--main-color);
+}
+.services .serv div a:hover {
+  color: var(--main-color-alt);
+}
 /* end of services */
 
