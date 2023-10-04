@@ -67,7 +67,9 @@ body {
 , .gallery
 , .testi 
 , .services 
-, .team {
+, .team
+, .skills
+, .works {
   position: relative;
   padding-top: var(--main-padding);
   padding-bottom: var(--main-padding);
@@ -76,7 +78,8 @@ body {
 
 .gallery 
 , .testi 
-, .services {
+, .services
+, .works {
   background-color: var(--section-background);
 }
 
@@ -926,4 +929,73 @@ header .container > ul > li:hover + div , .sections:hover {
   color: var(--main-color-alt);
 }
 /* end of services */
+/* start of our skills */
+.skills .container {
+  display: flex;
+}
+.skills .container .image {
+  flex-basis: 40%;
+}
+@media (max-width: 992px) {
+  .skills .container .image {
+    display: none;
+  }
+}
+.skills .container .skills-cont {
+  flex: 1;
+}
+.skills .container .skill div {
+  position: relative;
+  background-color: var(--section-background);
+  padding: 15px;
+}
+.skills .container .skill div::before {
+  content: "";
+  position: absolute;
+  background-color: var(--main-color);
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.skills .container .skill:first-child div::before {
+  width: 80%;
+}
+.skills .container .skill:nth-child(2) div::before {
+  width: 85%;
+}
+.skills .container .skill:nth-child(3) div::before {
+  width: 70%;
+}
+.skills .container .skill:last-child div::before {
+  width: 80%;
+}
+.skills .container .skill div::after {
+  content: "";
+  color: var(--main-color);
+  padding: 2px 4px;
+  font-size: 12px;
+  font-weight: 800;
+  position: absolute;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  top: -30px;
+  right: 5px;
+}
+.skills .container .skill:first-child div::after
+, .skills .container .skill:last-child div::after {
+  content: "80%";
+}
+.skills .container .skill:nth-child(2) div::after {
+  content: "85%";
+}
+.skills .container .skill:nth-child(3) div::after {
+  content: "70%";
+}
+.skills .container .skill h2 {
+  font-size: 20px;
+}
+/* end of our skills */
+/* start of works */
+
+/* end of our works */
 
